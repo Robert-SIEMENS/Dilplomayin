@@ -4,8 +4,8 @@ from GAN.dataloader import DataLoader
 from tensorflow.keras.callbacks import ModelCheckpoint
 
 def train(epochs=50, batch_size=16):
-    data_loader = DataLoader("G:/Hripsime/Education/UNI/4rd_kurs/Diploma project/Code/Diploma-Project/Train data/train_layouts", 
-                             "G:/Hripsime/Education/UNI/4rd_kurs/Diploma project/Code/Diploma-Project/Train data/train_masks/")
+    data_loader = DataLoader("G:/Robert/Education/UNI/5rd_kurs/Diploma project/Code/Diploma-Project/Train data/train_layouts", 
+                             "G:/Robert/Education/UNI/5rd_kurs/Diploma project/Code/Diploma-Project/Train data/train_masks/")
     layouts, masks = data_loader.load_images()
     dataset = tf.data.Dataset.from_tensor_slices((layouts, masks)).batch(batch_size)
     gan = Pix2PixGAN()
